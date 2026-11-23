@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Chaos Break"
+id = "SLES-03107"
+players = 1
+exe = "disc/SLES_031.07"
+disc = "disc/Chaos Break (Europe) (En,Fr,De,It).cue"
+discs = ["disc/Chaos Break (Europe) (En,Fr,De,It).cue"]
+disc_serials = ["SLES-03107"]
+load_address = "0x80010000"
+entry_pc = "0x80010008"
+text_size = "0x00102000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Chaos Break (Europe) (En,Fr,De,It) (Track 1).bin"
+cue_name = "Chaos Break (Europe) (En,Fr,De,It).cue"
+boot_exe = "SLES_031.07"
+known_sizes = [44946720]
+known_md5 = [
+  "f163c066c15537f635ad25a258d87e51",
+]
+known_sha1 = [
+  "3691b4441b68e0e3a91074749fa974d0c41c10a2",
+]
+known_crc32 = [
+  "e957b273",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Chaos Break Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "334dbe19fa634ab9b9bb1f166e531e6fd4504c2c6beda38ff18641c857fa7ae6"

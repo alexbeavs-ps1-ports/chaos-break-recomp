@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Chaos Break",
+    "id": "SLES-03107",
+    "boot_exe": "SLES_031.07"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Chaos Break (Europe) (En,Fr,De,It).cue",
+    "bin_name": "Chaos Break (Europe) (En,Fr,De,It) (Track 1).bin",
+    "track_counts": [
+      2
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 44946720,
+      "md5": "f163c066c15537f635ad25a258d87e51",
+      "sha1": "3691b4441b68e0e3a91074749fa974d0c41c10a2",
+      "crc32": "e957b273"
+    },
+    "disc_fp": "334dbe19fa634ab9b9bb1f166e531e6fd4504c2c6beda38ff18641c857fa7ae6"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80010008",
+    "text_size": "0x00102000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1612,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
